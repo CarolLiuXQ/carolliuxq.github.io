@@ -211,6 +211,34 @@
         .experience-item__description ul {
             padding-left: 1.5rem;
         }
+
+        
+        .licenses-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .license-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .license-item:last-child {
+            border-bottom: none;
+        }
+        
+        .license-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .license-issuer, .license-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -258,7 +286,23 @@
                 <h3>國立清華大學 - 中國語文學系學士 (2012-2017)</h3>
             </div>
         </section>
-
+        
+        <section id="licenses">
+            <h2>專業證照</h2>
+            <ul class="licenses-list">
+                <li class="license-item">
+                    <p class="license-name">AWS Certified Cloud Practitioner</p>
+                    <p class="license-issuer">發證單位：Amazon Web Services (AWS)</p>
+                    <p class="license-date">發證日期：2023 年 6 月</p>
+                </li>
+                <li class="license-item">
+                    <p class="license-name">SAS Certified Specialist: Machine Learning Using SAS Viya 3.5</p>
+                    <p class="license-issuer">發證單位：SAS</p>
+                    <p class="license-date">發證日期：2023 年 6 月</p>
+                </li>
+            </ul>
+        </section>
+        
         <section id="experience">
             <h2>工作經歷</h2>
             
