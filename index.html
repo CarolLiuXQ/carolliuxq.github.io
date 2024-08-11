@@ -4,274 +4,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carol Liu - 個人主頁</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0a9396;
+            --secondary-color: #005f73;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --section-bg-color: #fff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0 20px;
         }
+
         header {
-            background-color: #005f73;
+            background-color: var(--secondary-color);
             color: #fff;
+            padding: 2rem 0;
             text-align: center;
-            padding: 1rem;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
         }
+
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
+            border: 5px solid #fff;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .header-text {
-            text-align: left;
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
-        h1, h2 {
-            color: #0a9396;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
         section {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--section-bg-color);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
         .project, .publication {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
         }
+
         .project:last-child, .publication:last-child {
             border-bottom: none;
         }
-        ul {
-            padding-left: 20px;
-        }
-        a {
-            color: #0a9396;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+
         .contact-info {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
         }
+
         .contact-info a {
-            margin: 5px;
-            padding: 5px 10px;
-            background-color: #0a9396;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .contact-info a:hover {
-            background-color: #005f73;
             text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <div class="header-text">
+        <div class="container">
+            <img src="profile.jpg" alt="Carol Liu" class="profile-img">
             <h1>Carol Liu</h1>
-            <p>臺北大學專案助理 | 人工智慧與資料科學研究者</p>
+            <p class="subtitle">臺北大學專案助理 | 人工智慧與資料科學研究者</p>
         </div>
     </header>
 
-    <section id="about">
-        <h2>關於我</h2>
-        <p>我是Carol Liu,一名專注於人工智慧和資料科學領域的研究者和專業人士。目前在國立臺北大學擔任專案助理,主要參與AI在ESG評鑑與氣候變遷風險衡量的應用研究。我的專業領域包括Large Language Models (LLM)、視覺辨識、Microsoft Power BI和Zoho CRM等技術。</p>
-    </section>
-
-    <section id="contact">
-        <h2>Links</h2>
-        <div class="contact-info">
-            <a href="mailto:s7910565@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/carol-liu-5829a5103/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/CarolLiuXQ/" target="_blank">GitHub</a>
-            <a href="https://scholar.google.com.tw/citations?user=Fe2F7UAAAAAJ&hl=en&authuser=3" target="_blank">Google Scholar</a>
-            <a href="https://orcid.org/0009-0000-7904-6834" target="_blank">ORCID</a>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#experience">經歷</a></li>
+                <li><a href="#projects">專案</a></li>
+                <li><a href="#publications">發表</a></li>
+                <li><a href="#skills">技能</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <section id="education">
-        <h2>教育背景</h2>
-        <ul>
-            <li>
+    <main class="container">
+        <section id="about">
+            <h2>關於我</h2>
+            <p>我是Carol Liu，一名專注於人工智慧和資料科學領域的研究者和專業人士。目前在國立臺北大學擔任專案助理，主要參與AI在ESG評鑑與氣候變遷風險衡量的應用研究。我的專業領域包括Large Language Models (LLM)、視覺辨識、Microsoft Power BI和Zoho CRM等技術。</p>
+            <div class="contact-info">
+                <a href="mailto:s7910565@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/carol-liu-5829a5103/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/CarolLiuXQ/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://scholar.google.com.tw/citations?user=Fe2F7UAAAAAJ&hl=en&authuser=3" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="https://orcid.org/0009-0000-7904-6834" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="education-item">
                 <h3>國立臺北大學 - 資訊管理學系碩士 (2022-2024)</h3>
-                <p>論文題目：利用2D骨骼及RGB影像對服藥進行多模態動作識別 (Multi-modality Human Action Recognition with 2D Skeleton and RGB in Medication Adherence)</p>
+                <p>論文題目：利用2D骨骼及RGB影像對服藥進行多模態動作識別</p>
                 <p>指導教授：戴敏育 教授</p>
-            </li>
-            <li>國立清華大學 - 中國語文學系學士 (2012-2017)</li>
-        </ul>
-    </section>
+            </div>
+            <div class="education-item">
+                <h3>國立清華大學 - 中國語文學系學士 (2012-2017)</h3>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>工作經歷</h2>
-        <ul>
-            <li>臺北大學 - 專案助理 (2024年8月至今)</li>
-            <li>協禧電機股份有限公司 - 行政幹部 (2020年2月 - 2022年8月)</li>
-            <li>カソク（株） - 業務助理兼民宿負責人 (2018年1月 - 2019年12月)</li>
-        </ul>
-    </section>
+        <section id="experience">
+            <h2>工作經歷</h2>
+            <ul>
+                <li>臺北大學 - 專案助理 (2024年8月至今)</li>
+                <li>協禧電機股份有限公司 - 行政幹部 (2020年2月 - 2022年8月)</li>
+                <li>カソク（株） - 業務助理兼民宿負責人 (2018年1月 - 2019年12月)</li>
+            </ul>
+        </section>
 
-    <section id="projects">
-        <h2>參與計畫</h2>
-        <div class="project">
-            <h3>人工智慧於ESG評鑑與氣候變遷風險衡量之永續金融實務應用</h3>
-            <p>時間: 2024年7月</p>
-        </div>
-        <div class="project">
-            <h3>元宇宙AI多模態跨語言任務導向對話系統</h3>
-            <p>時間: 2023年5月 - 2024年7月</p>
-        </div>
-        <div class="project">
-            <h3>永續授信自動化解決方案－ESG負向裁罰資料庫</h3>
-            <p>時間: 2024年1月 - 2024年12月</p>
-        </div>
-        <div class="project">
-            <h3>生成式AI驅動的ESG報告生成技術</h3>
-            <p>時間: 2024年3月 - 2024年7月</p>
-        </div>
-        <div class="project">
-            <h3>人工智慧企業永續評鑑與跨語言永續績效報告書生成式模型</h3>
-            <p>時間: 2023年7月 - 2024年6月</p>
-        </div>
-        <div class="project">
-            <h3>擴大節能減碳成效橋接可行模式研析</h3>
-            <p>時間: 2024年1月</p>
-        </div>
-        <div class="project">
-            <h3>運用AI技術輔助交通事故撫慰金損害賠償請求：資料庫搜尋優化、額度預測機書狀生成</h3>
-            <p>時間: 2024年1月 - 2024年12月</p>
-        </div>
-        <div class="project">
-            <h3>「企金ESG評等系統升級服務」專案維護服務</h3>
-            <p>時間: 2023年7月 - 2023年12月</p>
-        </div>
-        <div class="project">
-            <h3>泛用數據處理相關程式碼生成引擎先導研究</h3>
-            <p>時間: 2023年8月 - 2023年12月</p>
-        </div>
-        <div class="project">
-            <h3>建立智慧輔助科技失智照護中心進行實作與社會經濟影響評估</h3>
-            <p>時間: 2022年8月 - 2025年7月</p>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>參與計畫</h2>
+            <div class="project">
+                <h3>人工智慧於ESG評鑑與氣候變遷風險衡量之永續金融實務應用</h3>
+                <p>時間: 2024年7月</p>
+            </div>
+            <div class="project">
+                <h3>元宇宙AI多模態跨語言任務導向對話系統</h3>
+                <p>時間: 2023年5月 - 2024年7月</p>
+            </div>
+            <div class="project">
+                <h3>永續授信自動化解決方案－ESG負向裁罰資料庫</h3>
+                <p>時間: 2024年1月 - 2024年12月</p>
+            </div>
+            <div class="project">
+                <h3>生成式AI驅動的ESG報告生成技術</h3>
+                <p>時間: 2024年3月 - 2024年7月</p>
+            </div>
+            <div class="project">
+                <h3>人工智慧企業永續評鑑與跨語言永續績效報告書生成式模型</h3>
+                <p>時間: 2023年7月 - 2024年6月</p>
+            </div>
+            <div class="project">
+                <h3>擴大節能減碳成效橋接可行模式研析</h3>
+                <p>時間: 2024年1月</p>
+            </div>
+            <div class="project">
+                <h3>運用AI技術輔助交通事故撫慰金損害賠償請求：資料庫搜尋優化、額度預測機書狀生成</h3>
+                <p>時間: 2024年1月 - 2024年12月</p>
+            </div>
+            <div class="project">
+                <h3>「企金ESG評等系統升級服務」專案維護服務</h3>
+                <p>時間: 2023年7月 - 2023年12月</p>
+            </div>
+            <div class="project">
+                <h3>泛用數據處理相關程式碼生成引擎先導研究</h3>
+                <p>時間: 2023年8月 - 2023年12月</p>
+            </div>
+            <div class="project">
+                <h3>建立智慧輔助科技失智照護中心進行實作與社會經濟影響評估</h3>
+                <p>時間: 2022年8月 - 2025年7月</p>
+            </div>
+        </section>
 
-    <section id="publications">
-        <h2>國際學術研討會論文發表</h2>
-        <div class="publication">
-            <h3>Enhancing Multilingual ESG Impact Duration Classification with Transformer Language Models and Data Augmentation Strategies</h3>
-            <p>作者: Yu-Han Kao, Vidhya Nataraj, Hsiao-Chuan Liu, Wen-Hsuan Liao, Chia-Tung Tsai, and Min-Yuh Day</p>
-            <p>發表於: The 35th International Conference on Information Management (ICIM 2024)</p>
-            <p>時間: 2024年6月23日</p>
-        </div>
-        <div class="publication">
-            <h3>IMNTPU at ML-ESG-3: Transformer Language Models for Multi-Lingual ESG Impact Type and Duration Classification</h3>
-            <p>作者: Yu Han Kao, Vidhya Nataraj, Ting-Chi Wang, Yu-Jyun Zheng, Hsiao-Chuan Liu, Wen-Hsuan Liao, Chia-Tung Tsai, and Min-Yuh Day</p>
-            <p>發表於: Joint Workshop of the 7th Financial Technology and Natural Language Processing (FinNLP), the 5th Knowledge Discovery from Unstructured Data in Financial Services (KDF), and The 4th Workshop on Economics and Natural Language Processing (ECONLP), in Proceedings of The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)</p>
-            <p>時間: 2024年5月31日</p>
-        </div>
-        <div class="publication">
-            <h3>A Pilot Study on AI-Assisted Code Generation with Large Language Models for Software Engineering</h3>
-            <p>作者: Hsiao-Chuan Liu, Chia-Tung Tsai, and Min-Yuh Day</p>
-            <p>發表於: The 28th International Conference on Technologies and Applications of Artificial Intelligence (TAAI 2023)</p>
-            <p>時間: 2024年3月28日</p>
-        </div>
-        <div class="publication">
-            <h3>IMNTPU at the NTCIR-17 Real-MedNLP Task: Multi-Model Approach to Adverse Drug Event Detection from Social Media</h3>
-            <p>作者: Hsiao-Chuan Liu, Vidhya Nataraj, Chia-Tung Tsai, Wen-Hsuan Liao, Tzu-Yu Liu, Mike Tian-Jian Jiang, and Min-Yuh Day</p>
-            <p>發表於: The 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17)</p>
-            <p>時間: 2023年12月12日</p>
-        </div>
-        <div class="publication">
-            <h3>IMNTPU at the NTCIR-17 FinArg-1 Argument-based Sentiment Analysis and Identifying Attack and Support Argumentative Relations in Social Media Discussion Threads</h3>
-            <p>作者: Chia-Tung Tsai, Wen-Hsuan Liao, Hsiao-Chuan Liu, Vidhya Nataraj, Tzu-Yu Liu, Mike Tian-Jian Jiang, and Min-Yuh Day</p>
-            <p>發表於: The 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17)</p>
-            <p>時間: 2023年12月12日</p>
-        </div>
-        <div class="publication">
-            <h3>Comparative Analysis of Pre-trained and Large Language Models in Adverse Drug Event Detection from Twitter Content</h3>
-            <p>作者: Hsiao-Chuan Liu and Min-Yuh Day</p>
-            <p>發表於: The 28th International Conference on Information Management and Practice (IMP2023)</p>
-            <p>時間: 2023年12月9日</p>
-        </div>
-        <div class="publication">
-            <h3>Multi-label Text Classification with Adervse Drug Event by Using Pre-trained Language Models and Large Language Models</h3>
-            <p>作者: Hsiao-Chuan Liu and Min-Yuh Day</p>
-            <p>發表於: NCS 2023</p>
-            <p>時間: 2023年11月3日</p>
-        </div>
-        <div class="publication">
-            <h3>Speech-to-speech Low-resource Translation</h3>
-            <p>作者: Hsiao-Chuan Liu, Min-Yuh Day, and Chih-Chien Wang</p>
-            <p>發表於: The 12th IEEE International Workshop on Empirical Methods for Recognizing Inference in TExt (IEEE EM-RITE 2023), in Proceedings of the 24th IEEE International Conference on Information Reuse and Integration for Data Science (IEEE IRI 2023)</p>
-            <p>時間: 2023年8月4日</p>
-        </div>
-    </section>
+        <section id="publications">
+            <h2>國際學術研討會論文發表</h2>
+            <div class="publication">
+                <h3>Enhancing Multilingual ESG Impact Duration Classification with Transformer Language Models and Data Augmentation Strategies</h3>
+                <p>作者: Yu-Han Kao, Vidhya Nataraj, Hsiao-Chuan Liu, Wen-Hsuan Liao, Chia-Tung Tsai, and Min-Yuh Day</p>
+                <p>發表於: The 35th International Conference on Information Management (ICIM 2024)</p>
+                <p>時間: 2024年6月23日</p>
+            </div>
+            <div class="publication">
+                <h3>IMNTPU at ML-ESG-3: Transformer Language Models for Multi-Lingual ESG Impact Type and Duration Classification</h3>
+                <p>作者: Yu Han Kao, Vidhya Nataraj, Ting-Chi Wang, Yu-Jyun Zheng, Hsiao-Chuan Liu, Wen-Hsuan Liao, Chia-Tung Tsai, and Min-Yuh Day</p>
+                <p>發表於: Joint Workshop of the 7th Financial Technology and Natural Language Processing (FinNLP), the 5th Knowledge Discovery from Unstructured Data in Financial Services (KDF), and The 4th Workshop on Economics and Natural Language Processing (ECONLP), in Proceedings of The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)</p>
+                <p>時間: 2024年5月31日</p>
+            </div>
+            <div class="publication">
+                <h3>A Pilot Study on AI-Assisted Code Generation with Large Language Models for Software Engineering</h3>
+                <p>作者: Hsiao-Chuan Liu, Chia-Tung Tsai, and Min-Yuh Day</p>
+                <p>發表於: The 28th International Conference on Technologies and Applications of Artificial Intelligence (TAAI 2023)</p>
+                <p>時間: 2024年3月28日</p>
+            </div>
+            <div class="publication">
+                <h3>IMNTPU at the NTCIR-17 Real-MedNLP Task: Multi-Model Approach to Adverse Drug Event Detection from Social Media</h3>
+                <p>作者: Hsiao-Chuan Liu, Vidhya Nataraj, Chia-Tung Tsai, Wen-Hsuan Liao, Tzu-Yu Liu, Mike Tian-Jian Jiang, and Min-Yuh Day</p>
+                <p>發表於: The 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17)</p>
+                <p>時間: 2023年12月12日</p>
+            </div>
+            <div class="publication">
+                <h3>IMNTPU at the NTCIR-17 FinArg-1 Argument-based Sentiment Analysis and Identifying Attack and Support Argumentative Relations in Social Media Discussion Threads</h3>
+                <p>作者: Chia-Tung Tsai, Wen-Hsuan Liao, Hsiao-Chuan Liu, Vidhya Nataraj, Tzu-Yu Liu, Mike Tian-Jian Jiang, and Min-Yuh Day</p>
+                <p>發表於: The 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17)</p>
+                <p>時間: 2023年12月12日</p>
+            </div>
+            <div class="publication">
+                <h3>Comparative Analysis of Pre-trained and Large Language Models in Adverse Drug Event Detection from Twitter Content</h3>
+                <p>作者: Hsiao-Chuan Liu and Min-Yuh Day</p>
+                <p>發表於: The 28th International Conference on Information Management and Practice (IMP2023)</p>
+                <p>時間: 2023年12月9日</p>
+            </div>
+            <div class="publication">
+                <h3>Multi-label Text Classification with Adervse Drug Event by Using Pre-trained Language Models and Large Language Models</h3>
+                <p>作者: Hsiao-Chuan Liu and Min-Yuh Day</p>
+                <p>發表於: NCS 2023</p>
+                <p>時間: 2023年11月3日</p>
+            </div>
+            <div class="publication">
+                <h3>Speech-to-speech Low-resource Translation</h3>
+                <p>作者: Hsiao-Chuan Liu, Min-Yuh Day, and Chih-Chien Wang</p>
+                <p>發表於: The 12th IEEE International Workshop on Empirical Methods for Recognizing Inference in TExt (IEEE EM-RITE 2023), in Proceedings of the 24th IEEE International Conference on Information Reuse and Integration for Data Science (IEEE IRI 2023)</p>
+                <p>時間: 2023年8月4日</p>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>技能</h2>
-        <ul>
-            <li>Large Language Models (LLM)</li>
-            <li>視覺辨識</li>
-            <li>醫療保健</li>
-            <li>Environmental, Social, and Governance (ESG)</li>
-            <li>Microsoft Power BI</li>
-            <li>Zoho CRM</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <h2>技能</h2>
+            <div class="skills-list">
+                <span class="skill-item">Large Language Models (LLM)</span>
+                <span class="skill-item">視覺辨識</span>
+                <span class="skill-item">醫療保健</span>
+                <span class="skill-item">Environmental, Social, and Governance (ESG)</span>
+                <span class="skill-item">Microsoft Power BI</span>
+                <span class="skill-item">Zoho CRM</span>
+            </div>
+        </section>
 
-    <section id="awards">
-        <h2>榮譽獎項</h2>
-        <ul>
-            <li>
-                <h3>2024臺北大學第二屆AI智慧應用創新競賽-優選</h3>
-                <p>獲獎日期: 2024年5月</p>
-                <p>頒獎單位: 國立臺北大學</p>
-            </li>
-            <li>
-                <h3>2023臺北大學第一屆AI智慧應用創新競賽-第一名</h3>
-                <p>獲獎日期: 2023年11月</p>
-                <p>頒獎單位: 國立臺北大學</p>
-            </li>
-            <li>
-                <h3>iCREATe 2023國際研討會全球學生創新討戰賽(gSIC)，榮獲科技組佳作</h3>
-                <p>獲獎日期: 2023年8月</p>
-                <p>頒獎單位: iCREATe 2023 (International Convention on Rehabilitation Engineering and Assistive Technology)</p>
-            </li>
-            <li>
-                <h3>AWS Educate 雲端提案競賽:運用雲端技術創新應用於永續發展與社會責任-第三名</h3>
-                <p>獲獎日期: 2023年1月</p>
-                <p>頒獎單位: AWS Educate</p>
-            </li>
-        </ul>
-    </section>
+        <section id="awards">
+            <h2>榮譽獎項</h2>
+            <ul>
+                <li>
+                    <h3>2024臺北大學第二屆AI智慧應用創新競賽-優選</h3>
+                    <p>獲獎日期: 2024年5月</p>
+                    <p>頒獎單位: 國立臺北大學</p>
+                </li>
+                <li>
+                    <h3>2023臺北大學第一屆AI智慧應用創新競賽-第一名</h3>
+                    <p>獲獎日期: 2023年11月</p>
+                    <p>頒獎單位: 國立臺北大學</p>
+                </li>
+                <li>
+                    <h3>iCREATe 2023國際研討會全球學生創新討戰賽(gSIC)，榮獲科技組佳作</h3>
+                    <p>獲獎日期: 2023年8月</p>
+                    <p>頒獎單位: iCREATe 2023 (International Convention on Rehabilitation Engineering and Assistive Technology)</p>
+                </li>
+                <li>
+                    <h3>AWS Educate 雲端提案競賽:運用雲端技術創新應用於永續發展與社會責任-第三名</h3>
+                    <p>獲獎日期: 2023年1月</p>
+                    <p>頒獎單位: AWS Educate</p>
+                </li>
+            </ul>
+        </section>
 
-    <section id="languages">
-        <h2>語言能力</h2>
-        <ul>
-            <li>中文 (母語)</li>
-            <li>英文 (精通)</li>
-            <li>日文 (精通)</li>
-        </ul>
-    </section>
+        <section id="languages">
+            <h2>語言能力</h2>
+            <ul>
+                <li>中文 (母語)</li>
+                <li>英文 (精通)</li>
+                <li>日文 (精通)</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2024 Carol Liu. All rights reserved.</p>
+        <div class="container">
+            <p>© 2024 Carol Liu. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
