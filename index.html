@@ -172,6 +172,45 @@
                 flex-direction: column;
             }
         }
+        
+         .experience-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        .experience-logo {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            margin-right: 1rem;
+            object-fit: contain;
+        }
+        .experience-content {
+            flex-grow: 1;
+        }
+        .experience-item__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item__company {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .experience-item__duration {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item__description {
+            margin-top: 1rem;
+        }
+        .experience-item__description ul {
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -284,7 +323,7 @@
             </div>
     
             <div class="experience-item">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F%25E6%25A0%25AA%25E5%25BC%258F%25E4%25BC%259A%25E7%25A4%25BEbeyond-borders%2F&psig=AOvVaw0k89I2SAW8YLPQH5YrwXzr&ust=1723488033705000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiJzLLL7YcDFQAAAAAdAAAAABAE" alt="BEYOND BORDERS logo" class="experience-logo">
+                <img src="https://beyondborders.jp/wp-content/themes/beyondborders/img/common/no_img.jpg" alt="BEYOND BORDERS logo" class="experience-logo">
                 <div class="experience-content">
                     <h3 class="experience-item__title">人資行政助理</h3>
                     <p class="experience-item__company">株式会社BEYOND BORDERS</p>
