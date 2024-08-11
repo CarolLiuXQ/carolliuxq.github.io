@@ -20,6 +20,19 @@
             text-align: center;
             padding: 1rem;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+        }
+        .header-text {
+            text-align: left;
         }
         h1, h2 {
             color: #0a9396;
@@ -49,17 +62,47 @@
         a:hover {
             text-decoration: underline;
         }
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .contact-info a {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #0a9396;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-info a:hover {
+            background-color: #005f73;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Carol Liu</h1>
-        <p>臺北大學專案助理 | 人工智慧與資料科學研究者</p>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <div class="header-text">
+            <h1>Carol Liu</h1>
+            <p>臺北大學專案助理 | 人工智慧與資料科學研究者</p>
+        </div>
     </header>
 
     <section id="about">
         <h2>關於我</h2>
         <p>我是Carol Liu,一名專注於人工智慧和資料科學領域的研究者和專業人士。目前在國立臺北大學擔任專案助理,主要參與AI在ESG評鑑與氣候變遷風險衡量的應用研究。我的專業領域包括Large Language Models (LLM)、視覺辨識、Microsoft Power BI和Zoho CRM等技術。</p>
+    </section>
+
+    <section id="contact">
+        <h2>聯絡方式</h2>
+        <div class="contact-info">
+            <a href="mailto:youremail@example.com">Email</a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <!-- 可以根據需要添加或移除聯絡方式 -->
+        </div>
     </section>
 
     <section id="education">
