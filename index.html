@@ -1,87 +1,137 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carol Liu Profile</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFC0CB;
-      color: #FFFFFF;
-      margin: 0;
-      padding: 0;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      text-align: center;
-      max-width: 800px;
-      margin-bottom: 20px;
-    }
-
-    a {
-      display: inline-block;
-      background-color: #FF69B4;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #FFFFFF;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    a:hover {
-      background-color: #FF1493;
-    }
-
-    .icon {
-      margin-right: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carol Liu - 個人主頁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #005f73;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #0a9396;
+        }
+        section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .project, .publication {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .project:last-child, .publication:last-child {
+            border-bottom: none;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #0a9396;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="row justify-content-center align-items-center min-vh-100">
-      <div class="col-12 col-md-8 col-lg-6 text-center">
-        <img src="profile.jpg" alt="Profile Picture">
+    <header>
         <h1>Carol Liu</h1>
-        <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
-        <p>M.B.A. Department of Information Management, National Teipei University, 2022-</p>
-        <p>B.B.A. Department of Chinese Literature, National Tsing-Hua University, 2012-2016</p>
-        <h2><i class="fas fa-briefcase icon"></i>Experience</h2>
-        <p>研發處 · 行政幹部 at 協禧電機股份有限公司, 2020/02~2022/09</p>
-        <p>業務助理兼民宿負責人 at カソク株式會社, 2018/01~2020/01</p>
-        <p>總務兼人資實習生 at BEYOND BORDERS CO.,LTD, 2016/05~2017/01</p>
-        <a href="https://github.com/CarolLiuXQ/" target="_blank">Visit my Github</a>
-      </div>
-    </div>
-  </div>
-</body>
+        <p>臺北大學專案助理 | 人工智慧與資料科學研究者</p>
+    </header>
 
+    <section id="about">
+        <h2>關於我</h2>
+        <p>我是Carol Liu,一名專注於人工智慧和資料科學領域的研究者和專業人士。目前在國立臺北大學擔任專案助理,主要參與AI在ESG評鑑與氣候變遷風險衡量的應用研究。我的專業領域包括Large Language Models (LLM)、視覺辨識、Microsoft Power BI和Zoho CRM等技術。</p>
+    </section>
+
+    <section id="education">
+        <h2>教育背景</h2>
+        <ul>
+            <li>國立臺北大學 - 資訊管理學系碩士 (2022-2024)</li>
+            <li>國立清華大學 - 中國語文學系學士 (2012-2017)</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>工作經歷</h2>
+        <ul>
+            <li>臺北大學 - 專案助理 (2024年8月至今)</li>
+            <li>協禧電機股份有限公司 - 行政幹部 (2020年2月 - 2022年8月)</li>
+            <li>カソク（株） - 業務助理兼民宿負責人 (2018年1月 - 2019年12月)</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>研究項目</h2>
+        <div class="project">
+            <h3>人工智慧於ESG評鑑與氣候變遷風險衡量之永續金融實務應用</h3>
+            <p>時間: 2024年7月</p>
+        </div>
+        <div class="project">
+            <h3>元宇宙AI多模態跨語言任務導向對話系統</h3>
+            <p>時間: 2023年5月 - 2024年7月</p>
+        </div>
+        <!-- 可以繼續添加更多項目 -->
+    </section>
+
+    <section id="publications">
+        <h2>出版作品</h2>
+        <div class="publication">
+            <h3>Enhancing Multilingual ESG Impact Duration Classification with Transformer Language Models and Data Augmentation Strategies</h3>
+            <p>發表於: The 35th International Conference on Information Management (ICIM 2024)</p>
+            <p>時間: 2024年6月23日</p>
+        </div>
+        <!-- 可以繼續添加更多出版作品 -->
+    </section>
+
+    <section id="skills">
+        <h2>技能</h2>
+        <ul>
+            <li>Large Language Models (LLM)</li>
+            <li>視覺辨識</li>
+            <li>Microsoft Power BI</li>
+            <li>Zoho CRM</li>
+        </ul>
+    </section>
+
+    <section id="awards">
+        <h2>榮譽獎項</h2>
+        <ul>
+            <li>2024臺北大學第二屆AI智慧應用創新競賽-優選</li>
+            <li>2023臺北大學第一屆AI智慧應用創新競賽-第一名</li>
+            <li>iCREATe 2023國際研討會全球學生創新討戰賽(gSIC)，榮獲科技組佳作</li>
+        </ul>
+    </section>
+
+    <section id="languages">
+        <h2>語言能力</h2>
+        <ul>
+            <li>中文 (母語)</li>
+            <li>英文 (精通)</li>
+            <li>日文 (精通)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2024 Carol Liu. All rights reserved.</p>
+    </footer>
+</body>
 </html>
